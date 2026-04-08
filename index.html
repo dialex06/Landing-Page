@@ -1,30 +1,36 @@
-<h1 class="title">🛒 Fashion Shop</h1>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion Shop</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<!-- Slider (đặt riêng phía trên) -->
+<h1 class="title">🛒 Fashion Jet Jet VIP NHẤT VIỆT NAM</h1>
+
+<!-- Slider -->
 <div class="slider">
   <img id="slide" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
 </div>
 
-<!-- Danh sách sản phẩm -->
-<div class="products">
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" alt="Áo thun">
-    <h3>Áo thun</h3>
-    <p>100.000đ</p>
-    <button onclick="addToCart('Áo thun',100000, this)">Thêm</button>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246" alt="Quần jeans">
-    <h3>Quần jeans</h3>
-    <p>300.000đ</p>
-    <button onclick="addToCart('Quần jeans',300000, this)">Thêm</button>
-  </div>
-
+<!-- Filter & Search -->
+<div class="controls">
+  <button onclick="filterCategory('all')">Tất cả</button>
+  <button onclick="filterCategory('áo')">Áo</button>
+  <button onclick="filterCategory('quần')">Quần</button>
+  <input type="text" id="searchInput" placeholder="Tìm kiếm..." onkeyup="searchProduct()">
 </div>
+
+<!-- Sản phẩm -->
+<div class="products" id="productContainer"></div>
 
 <!-- Giỏ hàng -->
 <h2>🧾 Giỏ hàng</h2>
 <ul id="cart"></ul>
 <p id="total"></p>
+
+<script src="script.js"></script>
+</body>
+</html>
