@@ -30,7 +30,13 @@
 <h2>🧾 Giỏ hàng</h2>
 <ul id="cart"></ul>
 <p id="total"></p>
-<button id="checkoutBtn" onclick="checkout()">Thanh toán</button>
+
+<!-- Thanh toán form -->
+<div id="checkoutForm" style="max-width:400px;margin:auto;">
+  <input type="text" id="customerName" placeholder="Tên khách hàng" required style="width:100%;padding:5px;margin-bottom:5px;">
+  <input type="text" id="customerPhone" placeholder="Số điện thoại" required style="width:100%;padding:5px;margin-bottom:5px;">
+  <button id="checkoutBtn" onclick="checkout()">Thanh toán & In bill</button>
+</div>
 
 <script src="script.js"></script>
 </body>

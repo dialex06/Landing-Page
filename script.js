@@ -67,19 +67,48 @@ let index=0; setInterval(()=>{ index=(index+1)%images.length; document.getElemen
 
 // Initial Render
 renderProducts(); renderCart();
-function checkout() {
-  if(cart.length === 0){
-    alert("Giỏ hàng trống!");
-    return;
+function checkout(){
+  if(cart.length===0){ 
+    alert("Giỏ hàng trống!"); 
+    return; 
   }
-  
-  let total = cart.reduce((sum, item) => sum + item.price, 0);
-  
-  // Demo alert; sau này có thể tích hợp Stripe/Netlify
-  alert(`Bạn đã thanh toán thành công! Tổng: ${total.toLocaleString()}đ`);
-  
-  // Clear giỏ hàng
+
+  const name = document.getElementById("customerName").value.trim();
+  const phone = document.getElementById("customerPhone").value.trim();
+  if(!name || !phone){ 
+    alert("Vui lòng điền Tên và Số điện thoại!"); 
+    return; 
+  }
+
+  const total = cart.reduce((sum,item)=>sum+item.price,0);
+
+  // Tạo nội dung hóa đơn
+  let bill = `
+    <h2>🎫 HÓA ĐƠN MUA HÀNG</h2>
+    <p><strong>Khách hàng:</strong> ${name}</p>
+    <p><strong>SĐT:</strong> ${phone}</p>
+    <hr>
+    <ul>
+  `;
+  cart.forEach(item => {
+    bill += `<li>${item.name} - ${item.price.toLocaleString()}đ</li>`;
+  });
+  bill += `</ul><hr>
+    <p><strong>Tổng:</strong> ${total.toLocaleString()}đ</p>
+  `;
+
+  // Mở popup in bill
+  const printWindow = window.open('', '', 'width=400,height=600');
+  printWindow.document.write(bill);
+  printWindow.document.close();
+  printWindow.print();
+
+  // Clear cart
   cart = [];
   saveCart();
   renderCart();
+
+  // Xóa form
+  document.getElementById("customerName").value = '';
+  document.getElementById("customerPhone").value = '';
 }
