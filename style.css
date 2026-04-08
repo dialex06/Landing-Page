@@ -1,0 +1,39 @@
+body {
+  font-family: Arial;
+  background: #f5f5f5;
+}
+
+.title {
+  text-align: center;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 150px;
+}
+
+button {
+  background: #ff5722;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e64a19;
+}
