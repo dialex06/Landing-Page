@@ -56,3 +56,16 @@ button:hover { opacity:0.9; }
 /* Cart */
 #cart { list-style:none; padding:0; max-width:400px; margin:auto; }
 .shake { transform: scale(1.05); transition:0.2s; }
+#checkoutBtn {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#checkoutBtn:hover { background: #45a049; }

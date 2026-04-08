@@ -67,3 +67,19 @@ let index=0; setInterval(()=>{ index=(index+1)%images.length; document.getElemen
 
 // Initial Render
 renderProducts(); renderCart();
+function checkout() {
+  if(cart.length === 0){
+    alert("Giỏ hàng trống!");
+    return;
+  }
+  
+  let total = cart.reduce((sum, item) => sum + item.price, 0);
+  
+  // Demo alert; sau này có thể tích hợp Stripe/Netlify
+  alert(`Bạn đã thanh toán thành công! Tổng: ${total.toLocaleString()}đ`);
+  
+  // Clear giỏ hàng
+  cart = [];
+  saveCart();
+  renderCart();
+}
