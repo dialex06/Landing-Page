@@ -2,34 +2,43 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Shop Online</title>
+  <title>Shopee Mini</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header>
-  <h1>🛍️ Shop Online</h1>
+  <h1>🛍️ Shopee Mini</h1>
 </header>
 
-<section>
-  <h2>Sản phẩm</h2>
-  <div class="products" id="productContainer"></div>
-</section>
+<div class="container">
 
-<section>
-  <h2>🛒 Giỏ hàng</h2>
-  <ul id="cart"></ul>
-  <p id="total"></p>
-</section>
+  <aside class="sidebar">
+    <h3>Danh mục</h3>
+    <ul>
+      <li>Tất cả</li>
+      <li>Áo</li>
+      <li>Quần</li>
+      <li>Giày</li>
+    </ul>
+  </aside>
 
-<section>
-  <h2>Thanh toán</h2>
-  <div class="checkoutForm">
-    <input type="text" id="customerName" placeholder="Tên khách hàng">
-    <input type="text" id="customerPhone" placeholder="Số điện thoại">
+  <main>
+    <h2>Sản phẩm</h2>
+    <div class="products" id="productContainer"></div>
+  </main>
+
+  <aside class="cartBox">
+    <h3>🛒 Giỏ hàng</h3>
+    <ul id="cart"></ul>
+    <p id="total"></p>
+
+    <input type="text" id="customerName" placeholder="Tên">
+    <input type="text" id="customerPhone" placeholder="SĐT">
     <button onclick="checkout()">Thanh toán</button>
-  </div>
-</section>
+  </aside>
+
+</div>
 
 <script src="js/script.js"></script>
 </body>
