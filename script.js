@@ -1,53 +1,17 @@
 const products = [
-
-  cartEl.innerHTML = "";
-  let total = 0;
-
-  cart.forEach((item, i)=>{
-    total += item.price;
-    cartEl.innerHTML += `
-      <li>
-        ${item.name} (${item.price.toLocaleString()}đ)
-        <button onclick="removeItem(${i})">X</button>
-      </li>
-    `;
-  });
-
-  totalEl.innerText = "Tổng: " + total.toLocaleString() + "đ";
-}
-
-function removeItem(index){
-  cart.splice(index,1);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  renderCart();
-}
-
-function checkout(){
-  const name = document.getElementById("customerName").value;
-  const phone = document.getElementById("customerPhone").value;
-
-  if(!name || !phone){
-    alert("Nhập đầy đủ thông tin!");
-    return;
+  {
+    name: "Áo thun",
+    price: 100000,
+    img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"
+  },
+  {
+    name: "Quần jeans",
+    price: 300000,
+    img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246"
+  },
+  {
+    name: "Giày",
+    price: 500000,
+    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff"
   }
-
-  let total = cart.reduce((sum, item)=> sum + item.price, 0);
-
-  let win = window.open('', '', 'width=400,height=600');
-  win.document.write(`
-    <h2>HÓA ĐƠN</h2>
-    <p>${name}</p>
-    <p>${phone}</p>
-    <hr>
-    ${cart.map(i=> `<p>${i.name} - ${i.price}đ</p>`).join('')}
-    <hr>
-    <h3>${total}đ</h3>
-  `);
-
-  localStorage.removeItem("cart");
-  cart = [];
-  renderCart();
-}
-
-renderProducts();
-renderCart();
+];
