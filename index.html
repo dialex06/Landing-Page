@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fashion Shop</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Test UI</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1 class="title">🛒 Fashion Jet Jet VIP NHẤT VIỆT NAM</h1>
+<h1 class="title">Shop Demo</h1>
 
 <!-- Slider -->
 <div class="slider">
-  <img id="slide" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+  <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500">
 </div>
 
-<!-- Filter & Search -->
+<!-- Controls -->
 <div class="controls">
-  <button onclick="filterCategory('all')">Tất cả</button>
-  <button onclick="filterCategory('áo')">Áo</button>
-  <button onclick="filterCategory('quần')">Quần</button>
-  <input type="text" id="searchInput" placeholder="Tìm kiếm..." onkeyup="searchProduct()">
+  <button>Tất cả</button>
+  <button>Áo</button>
+  <button>Quần</button>
+  <input placeholder="Tìm sản phẩm...">
 </div>
 
-<!-- Sản phẩm -->
-<div class="products" id="productContainer"></div>
+<!-- Products -->
+<div class="products">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400">
+    <h4>Áo thun</h4>
+    <p>120,000đ</p>
+    <button>Thêm</button>
+    <button class="detailsBtn">Chi tiết</button>
+  </div>
 
-<!-- Giỏ hàng -->
-<h2>🧾 Giỏ hàng</h2>
-<ul id="cart"></ul>
-<p id="total"></p>
-<button id="checkoutBtn" onclick="checkout()">Thanh toán</button>
-
-<!-- Thanh toán form -->
-<div id="checkoutForm" style="max-width:400px;margin:auto;">
-  <input type="text" id="customerName" placeholder="Tên khách hàng" required style="width:100%;padding:5px;margin-bottom:5px;">
-  <input type="text" id="customerPhone" placeholder="Số điện thoại" required style="width:100%;padding:5px;margin-bottom:5px;">
-  <button id="checkoutBtn" onclick="checkout()">Thanh toán & In bill</button>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400">
+    <h4>Quần jeans</h4>
+    <p>300,000đ</p>
+    <button>Thêm</button>
+    <button class="detailsBtn">Chi tiết</button>
+  </div>
 </div>
 
-<script src="script.js"></script>
+<!-- Cart -->
+<h3>🛒 Giỏ hàng</h3>
+<ul id="cart">
+  <li>Áo thun - 120,000đ</li>
+</ul>
+
+<button id="checkoutBtn">Thanh toán</button>
+
 </body>
+</html>
