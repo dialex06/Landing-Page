@@ -1,11 +1,13 @@
 const products = [
+
+  cartEl.innerHTML = "";
   let total = 0;
 
   cart.forEach((item, i)=>{
     total += item.price;
     cartEl.innerHTML += `
       <li>
-        ${item.name} - ${item.price.toLocaleString()}đ
+        ${item.name} (${item.price.toLocaleString()}đ)
         <button onclick="removeItem(${i})">X</button>
       </li>
     `;
@@ -31,15 +33,15 @@ function checkout(){
 
   let total = cart.reduce((sum, item)=> sum + item.price, 0);
 
-  let billWindow = window.open('', '', 'width=400,height=600');
-  billWindow.document.write(`
+  let win = window.open('', '', 'width=400,height=600');
+  win.document.write(`
     <h2>HÓA ĐƠN</h2>
-    <p>Khách: ${name}</p>
-    <p>SĐT: ${phone}</p>
+    <p>${name}</p>
+    <p>${phone}</p>
     <hr>
     ${cart.map(i=> `<p>${i.name} - ${i.price}đ</p>`).join('')}
     <hr>
-    <h3>Tổng: ${total}đ</h3>
+    <h3>${total}đ</h3>
   `);
 
   localStorage.removeItem("cart");
