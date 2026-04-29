@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fashion Shop</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion Shop</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>CHÀO MỪNG ĐẾN FASHION JET JET VIP NHẤT VIỆT NAM</h1>
-  </header>
 
-  <!-- Slider -->
-  <div class="slider">
-    <img id="slide" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1400&q=80">
-  </div>
+<h1 class="title">🛒 Fashion Jet Jet VIP NHẤT VIỆT NAM</h1>
 
-  <!-- Filter & Search -->
-  <div class="controls">
-    <button onclick="filterCategory('all')">Tất cả</button>
-    <button onclick="filterCategory('ao')">Áo</button>
-    <button onclick="filterCategory('quan')">Quần</button>
-    <input type="text" id="searchInput" placeholder="Tìm kiếm..." onkeyup="searchProduct()">
-  </div>
+<!-- Slider -->
+<div class="slider">
+  <img id="slide" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+</div>
 
-  <!-- Sản phẩm -->
-  <div class="products" id="productContainer"></div>
+<!-- Filter & Search -->
+<div class="controls">
+  <button onclick="filterCategory('all')">Tất cả</button>
+  <button onclick="filterCategory('áo')">Áo</button>
+  <button onclick="filterCategory('quần')">Quần</button>
+  <input type="text" id="searchInput" placeholder="Tìm kiếm..." onkeyup="searchProduct()">
+</div>
 
-  <!-- Giỏ hàng -->
-  <div class="cart-box">
-    <h2>🛒 Giỏ hàng</h2>
-    <ul id="cart"></ul>
-    <p id="total">0 VNĐ</p>
-  </div>
+<!-- Sản phẩm -->
+<div class="products" id="productContainer"></div>
 
-  <script src="script.js"></script>
+<!-- Giỏ hàng -->
+<h2>🧾 Giỏ hàng</h2>
+<ul id="cart"></ul>
+<p id="total"></p>
+<button id="checkoutBtn" onclick="checkout()">Thanh toán</button>
+
+<!-- Thanh toán form -->
+<div id="checkoutForm" style="max-width:400px;margin:auto;">
+  <input type="text" id="customerName" placeholder="Tên khách hàng" required style="width:100%;padding:5px;margin-bottom:5px;">
+  <input type="text" id="customerPhone" placeholder="Số điện thoại" required style="width:100%;padding:5px;margin-bottom:5px;">
+  <button id="checkoutBtn" onclick="checkout()">Thanh toán & In bill</button>
+</div>
+
+<script src="script.js"></script>
 </body>
-</html>
