@@ -1,43 +1,89 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fashion Shop</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0; padding: 20px;
+}
 
-<h1 class="title">🛒 Fashion Jet Jet VIP NHẤT VIỆT NAM</h1>
+.title { text-align:center; margin-bottom:20px; }
 
-<!-- Slider -->
-<div class="slider">
-  <img id="slide" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
-</div>
+.slider { max-width: 500px; margin: auto 0 30px; }
+.slider img { width:100%; border-radius:10px; }
 
-<!-- Filter & Search -->
-<div class="controls">
-  <button onclick="filterCategory('all')">Tất cả</button>
-  <button onclick="filterCategory('áo')">Áo</button>
-  <button onclick="filterCategory('quần')">Quần</button>
-  <input type="text" id="searchInput" placeholder="Tìm kiếm..." onkeyup="searchProduct()">
-</div>
+/* Controls */
+.controls { text-align:center; margin-bottom:20px; }
+.controls button { margin: 0 5px; padding:5px 10px; cursor:pointer; }
+.controls input { padding:5px; margin-left:10px; }
 
-<!-- Sản phẩm -->
-<div class="products" id="productContainer"></div>
+/* Products Grid */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(120px,1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-<!-- Giỏ hàng -->
-<h2>🧾 Giỏ hàng</h2>
-<ul id="cart"></ul>
-<p id="total"></p>
-<button id="checkoutBtn" onclick="checkout()">Thanh toán</button>
+/* Card */
+.card {
+  padding: 10px;
+  border-radius: 10px;
+  background: white;
+  text-align: center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  position: relative;
+}
 
-<!-- Thanh toán form -->
-<div id="checkoutForm" style="max-width:400px;margin:auto;">
-  <input type="text" id="customerName" placeholder="Tên khách hàng" required style="width:100%;padding:5px;margin-bottom:5px;">
-  <input type="text" id="customerPhone" placeholder="Số điện thoại" required style="width:100%;padding:5px;margin-bottom:5px;">
-  <button id="checkoutBtn" onclick="checkout()">Thanh toán & In bill</button>
-</div>
+.card:hover { transform: translateY(-5px); }
 
-<script src="script.js"></script>
-</body>
+.card img {
+  width:100%;
+  height:100px;
+  object-fit: cover;
+  border-radius:8px;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img { transform: scale(1.1); }
+
+/* Buttons */
+button { margin-top:5px; padding:5px 8px; border:none; border-radius:5px; cursor:pointer; }
+button:hover { opacity:0.9; }
+.card button { background:#ff5722; color:white; }
+.card .detailsBtn { display:none; background:#2196f3; color:white; }
+.card:hover .detailsBtn { display:inline-block; }
+
+/* Cart */
+#cart { list-style:none; padding:0; max-width:400px; margin:auto; }
+.shake { transform: scale(1.05); transition:0.2s; }
+#checkoutBtn {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#checkoutBtn:hover { background: #45a049; }
+#checkoutBtn:hover { background: #45a049; }
+#checkoutForm input { 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  margin-bottom:5px; 
+  padding:8px;
+}
+#checkoutBtn { 
+  width:100%; 
+  padding:10px; 
+  background:#4caf50; 
+  color:white; 
+  border:none; 
+  border-radius:5px; 
+  cursor:pointer; 
+  font-weight:bold; 
+}
+#checkoutBtn:hover { background:#45a049; }
