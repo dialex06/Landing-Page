@@ -1,14 +1,51 @@
 const products = [
- {name:"Áo thun trắng", price:100000, category:"áo", img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"},
- {name:"Quần jeans xanh", price:300000, category:"quần", img:"https://images.unsplash.com/photo-1541099649105-f69ad21f3246"},
- {name:"Áo hoodie", price:250000, category:"áo", img:"https://images.unsplash.com/photo-1512436991641-6745cdb1723f"},
- {name:"Áo sơ mi", price:200000, category:"áo", img:"https://images.unsplash.com/photo-1523381210434-271e8be1f52b"},
- {name:"Quần short", price:150000, category:"quần", img:"https://images.unsplash.com/photo-1520975916090-3105956dac38"},
- {name:"Quần kaki", price:180000, category:"quần", img:"https://images.unsplash.com/photo-1520975916090-3105956dac38"},
- {name:"Áo khoác", price:350000, category:"áo", img:"https://images.unsplash.com/photo-1541099649105-f69ad21f3246"},
- {name:"Quần thể thao", price:120000, category:"quần", img:"https://images.unsplash.com/photo-1512436991641-6745cdb1723f"},
- {name:"Áo ba lỗ", price:80000, category:"áo", img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"},
- {name:"Quần jean rách", price:320000, category:"quần", img:"https://images.unsplash.com/photo-1523381210434-271e8be1f52b"}
+  // ÁO
+  {
+    name: "Áo thun trắng",
+    price: 120000,
+    img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400",
+    cat: "ao"
+  },
+  {
+    name: "Áo hoodie",
+    price: 250000,
+    img: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400",
+    cat: "ao"
+  },
+
+  // QUẦN
+  {
+    name: "Quần jeans xanh",
+    price: 320000,
+    img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400",
+    cat: "quan"
+  },
+  {
+    name: "Quần short",
+    price: 180000,
+    img: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=400",
+    cat: "quan"
+  },
+
+  // GIÀY
+  {
+    name: "Giày sneaker trắng",
+    price: 550000,
+    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400",
+    cat: "giay"
+  },
+  {
+    name: "Giày thể thao",
+    price: 600000,
+    img: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=400",
+    cat: "giay"
+  }
+  {
+  name: "Áo sơ mi",
+  price: 200000,
+  img: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400",
+  cat: "ao"
+}
 ];
 
 // ===== Cart =====
