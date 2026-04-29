@@ -2,44 +2,38 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Shopee Mini</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Shop</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>CHÀO MỪNG ĐẾN FASHION JET JET VIP NHẤT VIỆT NAM</h1>
+  </header>
 
-<header>
-  <h1>🛍️ Shopee Mini</h1>
-</header>
+  <!-- Slider -->
+  <div class="slider">
+    <img id="slide" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1400&q=80">
+  </div>
 
-<div class="container">
+  <!-- Filter & Search -->
+  <div class="controls">
+    <button onclick="filterCategory('all')">Tất cả</button>
+    <button onclick="filterCategory('ao')">Áo</button>
+    <button onclick="filterCategory('quan')">Quần</button>
+    <input type="text" id="searchInput" placeholder="Tìm kiếm..." onkeyup="searchProduct()">
+  </div>
 
-  <aside class="sidebar">
-    <h3>Danh mục</h3>
-    <ul>
-      <li>Tất cả</li>
-      <li>Áo</li>
-      <li>Quần</li>
-      <li>Giày</li>
-    </ul>
-  </aside>
+  <!-- Sản phẩm -->
+  <div class="products" id="productContainer"></div>
 
-  <main>
-    <h2>Sản phẩm</h2>
-    <div class="products" id="productContainer"></div>
-  </main>
-
-  <aside class="cartBox">
-    <h3>🛒 Giỏ hàng</h3>
+  <!-- Giỏ hàng -->
+  <div class="cart-box">
+    <h2>🛒 Giỏ hàng</h2>
     <ul id="cart"></ul>
-    <p id="total"></p>
+    <p id="total">0 VNĐ</p>
+  </div>
 
-    <input type="text" id="customerName" placeholder="Tên">
-    <input type="text" id="customerPhone" placeholder="SĐT">
-    <button onclick="checkout()">Thanh toán</button>
-  </aside>
-
-</div>
-
-<script src="js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
