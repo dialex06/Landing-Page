@@ -15,3 +15,20 @@ const products = [
     img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"
   }
 ];
+function renderProducts(){
+  const container = document.getElementById("productContainer");
+  container.innerHTML = "";
+
+  products.forEach((p, index)=>{
+    container.innerHTML += `
+      <div class="product">
+        <img src="${p.img}">
+        <h4>${p.name}</h4>
+        <p>${p.price.toLocaleString()}đ</p>
+      </div>
+    `;
+  });
+}
+
+// GỌI HÀM
+renderProducts();
